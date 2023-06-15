@@ -36,9 +36,6 @@ public class Professor extends Pessoa {
         this.iD = iD;
     }
 
-    public void adicionaNotaAluno(float nota, Aluno aluno) {
-        disciplina.adicionaNota(nota);
-    }
     
     public void setDisciplina(Disciplina disciplina){
          this.disciplina = disciplina;
