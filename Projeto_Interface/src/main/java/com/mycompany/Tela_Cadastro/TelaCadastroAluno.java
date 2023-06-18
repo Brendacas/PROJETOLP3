@@ -4,6 +4,7 @@ package com.mycompany.Tela_Cadastro;
 //=======
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Aluno;
+import com.mycompany.Classes_Form.TelaLogin;
 //>>>>>>> a87b71326058c17bf10c98a48107af10ef11f4b7
 
 
@@ -184,7 +185,7 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
                 
                 /*ERRO EM TELA LOGIN FALTA AINDA A TELA LOGING*/
-                TelaLogin.setArray_Aluno(novo);
+                //TelaLogin.setArray_Aluno(novo);
                 
                 dispose();
             } else {

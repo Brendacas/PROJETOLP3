@@ -1,4 +1,5 @@
 package com.mycompany.Tela_Cadastro;
+import com.mycompany.Classes_Form.TelaLogin;
 
 //Importação de classes necessarias
 import javax.swing.JOptionPane;
@@ -168,7 +169,7 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
                 novo.setID(iD);
 
                 JOptionPane.showMessageDialog(null, "Cadastro realizado!");
-                TelaLogin.setArray_ProfessorSemProf(novo);
+               // TelaLogin.setArray_ProfessorSemProf(novo);
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");

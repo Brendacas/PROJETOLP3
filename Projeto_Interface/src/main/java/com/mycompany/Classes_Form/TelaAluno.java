@@ -119,9 +119,9 @@ public class TelaAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemTrancarActionPerformed
 
     private void menuItemAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAlterarActionPerformed
-        AlterarSenha alterar = new AlterarSenha();
+        /*AlterarSenha alterar = new AlterarSenha();
         jDesktopPanePrincipal.add(alterar);
-        alterar.setVisible(true);
+        alterar.setVisible(true);*/
     }//GEN-LAST:event_menuItemAlterarActionPerformed
 
     /**
