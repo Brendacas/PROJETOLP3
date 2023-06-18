@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.Classes_Form;
+import com.mycompany.Tela_Cadastro.TelaCadastroAluno;
+import com.mycompany.Tela_Cadastro.TelaCadastroDisciplina;
+import com.mycompany.Tela_Cadastro.TelaCadastroProfessor;
 
 //import com.mycompany.interface_projeto.TelasUsuarios.TelaAluno;
 
