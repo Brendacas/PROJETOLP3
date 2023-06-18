@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.Classes_Form;
+import com.mycompany.Tela_Cadastro.TelaCadastroAluno;
+import com.mycompany.Tela_Cadastro.TelaCadastroDisciplina;
+import com.mycompany.Tela_Cadastro.TelaCadastroProfessor;
 
 //import com.mycompany.interface_projeto.TelasUsuarios.TelaAluno;
 
@@ -45,11 +48,11 @@ public class TelaAdmin extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 365, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 285, Short.MAX_VALUE)
+            .addGap(0, 576, Short.MAX_VALUE)
         );
 
         menuArquivos.setText("Arquivos");
