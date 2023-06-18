@@ -110,13 +110,8 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                     .addComponent(lblEmail)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(ButtonSalvar)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblMatricula)
-                            .addComponent(lblConfirmaSenha)
-                            .addComponent(TextFieldConfirmaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                            .addComponent(TextFieldMatricula)
-                            .addComponent(TextFiledEmail))))
-                .addContainerGap(51, Short.MAX_VALUE))
+                        .addGroup(layout.createPar
+                  
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,7 +143,6 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(ButtonSalvar)
                 .addContainerGap(23, Short.MAX_VALUE))
->>>>>>> origin/main
         );
 
         pack();
