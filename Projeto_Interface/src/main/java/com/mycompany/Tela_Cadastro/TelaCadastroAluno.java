@@ -88,6 +88,13 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+            .addGap(0, 519, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 359, Short.MAX_VALUE)
+=======
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -140,6 +147,7 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(ButtonSalvar)
                 .addContainerGap(23, Short.MAX_VALUE))
+>>>>>>> origin/main
         );
 
         pack();
