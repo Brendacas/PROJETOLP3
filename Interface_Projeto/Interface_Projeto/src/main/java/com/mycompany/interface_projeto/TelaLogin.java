@@ -15,33 +15,35 @@ import javax.swing.JOptionPane;
  * @author castr
  */
 public class TelaLogin extends javax.swing.JInternalFrame {
- public static ArrayList<Professor> Professores_semDisciplina;
+
+    public static ArrayList<Professor> Professores_semDisciplina;
     protected static ArrayList<Aluno> Alunos;
     protected static ArrayList<Professor> Professores;
-   
-    
-    
+
     protected String usuario;
     protected String senha;
-    
+
     protected String[] logins = {"Aluno"};
     protected String[] senhas = {"123456"};
+
     /**
      * Creates new form TelaLogin02
      */
-    public TelaLogin() {        
-        
+    public TelaLogin() {
+
         Alunos = new ArrayList<Aluno>();
         Professores_semDisciplina = new ArrayList<Professor>();
         Professores = new ArrayList<Professor>();
-         initComponents();
+        initComponents();
     }
-        public String getTxtUsuarioValue() {
+
+    public String getTxtUsuarioValue() {
         return txtUsuario.getValue().toString();
     }
+
     public String getTxtSenhaValue() {
         return new String(txtSenha.getPassword());
-     }
+    }
 
     public String getUsuario() {
         return usuario;
@@ -58,20 +60,23 @@ public class TelaLogin extends javax.swing.JInternalFrame {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    public static void setArray_Aluno(Aluno novo){
+
+    public static void setArray_Aluno(Aluno novo) {
         TelaLogin.Alunos.add(novo);
     }
-    
+
     public static ArrayList<Aluno> getArray_Aluno() {
         return Alunos;
     }
-     public static void setArray_ProfessorSemProf(Professor novo){
+
+    public static void setArray_ProfessorSemProf(Professor novo) {
         TelaLogin.Professores_semDisciplina.add(novo);
     }
-    
+
     public static ArrayList<Professor> getArray_Professores() {
         return Professores_semDisciplina;
     }
+
     public static void setArray_Professor(Professor novo) {
         Professores.add(novo);
     }
@@ -79,8 +84,8 @@ public class TelaLogin extends javax.swing.JInternalFrame {
     public static ArrayList<Professor> getArray_Professor() {
         return Professores;
     }
-   
-      public boolean verificarUsuario() {
+
+    public boolean verificarUsuario() {
         // Verificar se o usuário e senha estão corretos
         for (int i = 0; i < logins.length; i++) {
             if (usuario.equals(logins[i]) && senha.equals(senhas[i])) {
@@ -88,10 +93,8 @@ public class TelaLogin extends javax.swing.JInternalFrame {
             }
         }
         return false;
-      }
-  
+    }
 
-       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -198,7 +201,7 @@ public class TelaLogin extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-    boolean ehAluno = false, ehProfessor = false;
+        boolean ehAluno = false, ehProfessor = false;
         int i = 0;
         usuario = txtUsuario.getText();
         senha = txtSenha.getText();
@@ -207,11 +210,11 @@ public class TelaLogin extends javax.swing.JInternalFrame {
             if (usuario.equals(Professores.get(i).getID())
                     && senha.equals(Professores.get(i).getSenha())) {
                 ehProfessor = true;
-                
+
             } else if (usuario.equals(Alunos.get(i).getMatricula())
-                        && senha.equals(Alunos.get(i).getSenha())) {
+                    && senha.equals(Alunos.get(i).getSenha())) {
                 ehAluno = true;
-                
+
             }
         }
 
@@ -222,15 +225,16 @@ public class TelaLogin extends javax.swing.JInternalFrame {
             TelaAdmin adm = new TelaAdmin();
             adm.setVisible(true);
 
-        }else if(ehProfessor){
-                JOptionPane.showMessageDialog(null,"Acesso autorizado. Bem vindo, Professor!");
+        } else if (ehProfessor) {
+            JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem vindo, Professor!");
 //                dispose();
 //                TelaProfessor prof = new TelaProfessor();
 //                prof.setVisible(true);
-        }else if(ehAluno){
-                JOptionPane.showMessageDialog(null,"Acesso auttorizado. Bem vindo, Aluno!");
-                
-        }else JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
+        } else if (ehAluno) {
+            JOptionPane.showMessageDialog(null, "Acesso auttorizado. Bem vindo, Aluno!");
+
+        } else
+            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
