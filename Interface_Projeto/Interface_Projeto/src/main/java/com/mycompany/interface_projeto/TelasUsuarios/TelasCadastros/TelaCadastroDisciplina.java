@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package com.mycompany.interface_projeto.TelasUsuarios.TelasCadastros;
+
 import com.mycompany.interface_projeto.TelaLogin;
 import com.mycompany.interfacegrafica.model.Disciplina;
 import com.mycompany.interfacegrafica.model.Professor;
@@ -13,13 +14,13 @@ import javax.swing.JOptionPane;
  * @author esvie
  */
 public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
+
     /**
      * Creates new form TelaCadastroDisciplina
      */
     public TelaCadastroDisciplina() {
         initComponents();
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -89,16 +90,16 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
                     .addComponent(lblCreditos)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                     .addComponent(lblCodigo)
-                    .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                     .addComponent(lblNomeDisciplina)
-                    .addComponent(txtCreditos))
+                    .addComponent(txtCreditos)
+                    .addComponent(txtNome))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblID, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtIDProf, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(65, Short.MAX_VALUE))
+                        .addContainerGap(68, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +137,7 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
                             .addComponent(btnLimpar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnListar)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -144,15 +145,15 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         String listaProfessores = "";
-    for (Professor p : TelaLogin.getArray_Professor()) {
-        listaProfessores += p.getInfo() + "\n";
-    }
-    if (listaProfessores.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Não há professores cadastrados.");
-    } else {
-        JOptionPane.showMessageDialog(null, listaProfessores);
-    
-    }
+        for (Professor p : TelaLogin.getArray_Professor()) {
+            listaProfessores += p.getInfo() + "\n";
+        }
+        if (listaProfessores.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Não há professores cadastrados.");
+        } else {
+            JOptionPane.showMessageDialog(null, listaProfessores);
+
+        }
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void txtIDProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDProfActionPerformed
@@ -165,41 +166,37 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
         String codigo = txtCodigo.getText();
         String creditos = txtCreditos.getText();
         String iD = txtIDProf.getText();
-        boolean verifica = false;
         int i;
-       
-        Professor professor = new Professor();
-        
-        if (!nomeDisciplina.isEmpty() && !codigo.isEmpty() && !creditos.isEmpty() && !iD.isEmpty()){
-            Novo.setNomeDisciplina(nomeDisciplina);
-            Novo.setCodigoDisciplina(codigo);
-            Novo.setCreditos(Integer.parseInt(creditos));
-            for(i=0;i < TelaLogin.Professores_semDisciplina.size();i++){
-                if (iD.equals(TelaLogin.Professores_semDisciplina.get(i).getID())){
-                    verifica = true;
-                    professor = TelaLogin.Professores_semDisciplina.get(i);
+
+        if (!nomeDisciplina.isEmpty() && !codigo.isEmpty() && !creditos.isEmpty() && !iD.isEmpty()) {
+
+            for (i = 0; i < TelaLogin.Professores_semDisciplina.size(); i++) {
+               
+                if (iD.equals(TelaLogin.Professores_semDisciplina.get(i).getID())) {
+                   
+                    Novo.setNomeDisciplina(nomeDisciplina);
+                    Novo.setCodigoDisciplina(codigo);
+                    Novo.setCreditos(Integer.parseInt(creditos));
+                    
+                    JOptionPane.showMessageDialog(null, "Disciplina Cadastrada com sucesso!");
+                    TelaLogin.setArray_Professor(TelaLogin.Professores_semDisciplina.get(i));
+                    TelaLogin.Professores_semDisciplina.remove(i);
+                    
                     break;
                 }
             }
-            if(verifica){
-            JOptionPane.showMessageDialog(null, "Disciplina Cadastrada com sucesso!");
-            TelaLogin.setArray_Professor(professor);
-            TelaLogin.Professores_semDisciplina.remove(i);
-           
-            
-            }else {
-            JOptionPane.showMessageDialog(null, "Id do Professor invalido");
+        }else{
+                JOptionPane.showMessageDialog(null, "Id do Professor invalido");
             }
-        }
-        
+
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-      txtNome.setText(" ");
-      txtCodigo.setText(" ");
-      txtIDProf.setText(" ");
-      txtCreditos.setText(" ");
-        
+        txtNome.setText(" ");
+        txtCodigo.setText(" ");
+        txtIDProf.setText(" ");
+        txtCreditos.setText(" ");
+
     }//GEN-LAST:event_btnLimparActionPerformed
 
 
