@@ -5,9 +5,9 @@ import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Disciplina;
 import com.mycompany.Classes_base.Professor;
 
-public class TelaCadastroDisciplia extends javax.swing.JInternalFrame {
+public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
 
-    public TelaCadastroDisciplia() {
+    public TelaCadastroDisciplina() {
         initComponents();
     }
 

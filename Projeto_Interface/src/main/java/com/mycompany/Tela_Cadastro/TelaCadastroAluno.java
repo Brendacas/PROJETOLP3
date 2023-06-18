@@ -1,10 +1,11 @@
 package com.mycompany.Tela_Cadastro;
 
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Aluno;
->>>>>>> a87b71326058c17bf10c98a48107af10ef11f4b7
+//>>>>>>> a87b71326058c17bf10c98a48107af10ef11f4b7
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
