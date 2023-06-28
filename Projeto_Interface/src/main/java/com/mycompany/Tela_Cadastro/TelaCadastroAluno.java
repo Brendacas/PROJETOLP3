@@ -1,12 +1,7 @@
 package com.mycompany.Tela_Cadastro;
 
-//<<<<<<< HEAD
-//=======
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Aluno;
-import com.mycompany.Classes_Form.TelaLogin;
-//>>>>>>> a87b71326058c17bf10c98a48107af10ef11f4b7
-
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -89,13 +84,6 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGap(0, 519, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 359, Short.MAX_VALUE)
-=======
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -179,7 +167,7 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
                 
                 /*ERRO EM TELA LOGIN FALTA AINDA A TELA LOGING*/
-                //TelaLogin.setArray_Aluno(novo);
+                TelaLogin.setArray_Aluno(novo);
                 
                 dispose();
             } else {

@@ -4,11 +4,10 @@ package com.mycompany.Tela_Cadastro;
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Disciplina;
 import com.mycompany.Classes_base.Professor;
-import com.mycompany.Classes_Form.TelaLogin;
 
-public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
+public class TelaCadastroDisciplia extends javax.swing.JInternalFrame {
 
-    public TelaCadastroDisciplina() {
+    public TelaCadastroDisciplia() {
         initComponents();
     }
 
@@ -131,7 +130,7 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
-         /*
+
         //Estanciando uma nova disciplina
         Disciplina Novo = new Disciplina();
 
@@ -160,7 +159,7 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Id do Professor invalido");
-        }*/
+        }
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 
     private void ButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLimparActionPerformed
@@ -172,7 +171,7 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_ButtonLimparActionPerformed
 
     private void ButtonListProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListProfessorActionPerformed
-      /*  String listaProfessores = " ";
+        String listaProfessores = " ";
 
         for (Professor p : TelaLogin.getArray_Professor()) {
             listaProfessores += p.getInfo() + "\n";
@@ -182,7 +181,7 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, listaProfessores);
 
-        }*/
+        }
     }//GEN-LAST:event_ButtonListProfessorActionPerformed
 
 
