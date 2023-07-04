@@ -4,13 +4,15 @@
  */
 package com.mycompany.ClassesArquivo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author estevao
  */
 public interface DAO {
-    public void CreateArchive(String name);
-    public void ReadArchive(String name);
-    public void UpdateArchive(String name);
-    public void DeleteArchive(String name);
+    public void createArchive(String nome);
+    public void ReadArchive(String nome);
+    public void UpdateArchive(ArrayList<String> Linhas,String nome);
+    public void DeleteArchive(ArrayList<String> Linhas,String nome);
 }
