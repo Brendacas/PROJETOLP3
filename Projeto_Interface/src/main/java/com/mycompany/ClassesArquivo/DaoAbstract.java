@@ -55,7 +55,15 @@ public abstract class DaoAbstract implements DAO{
             }
         }catch(FileNotFoundException e){
             System.out.println("Arquivo não encontrado : \n" +e.getMessage());
-
+        }finally{
+            if (conteudoCSV != null){
+                try {
+                    conteudoCSV.close();
+                }catch(IOException e){
+                    System.out.println("IO erro: \n" + e.getMessage());
+                }
+            }
+        }
     }
     @Override
     public void UpdateArchive(ArrayList<String> Linhas, String nome){
