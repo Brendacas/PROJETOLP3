@@ -17,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
 
+
 /**
  *
  * @author estevao
@@ -55,6 +56,8 @@ public abstract class DaoAbstract implements DAO{
             }
         }catch(FileNotFoundException e){
             System.out.println("Arquivo não encontrado : \n" +e.getMessage());
+        } catch (IOException ex) {
+            Logger.getLogger(DaoAbstract.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             if (conteudoCSV != null){
                 try {
@@ -67,19 +70,7 @@ public abstract class DaoAbstract implements DAO{
     }
     @Override
     public void UpdateArchive(ArrayList<String> Linhas, String nome){
-         ArrayList<String> LinhasArquivo = new ArrayList<String>();
-        LinhasArquivo = ReadArchive(NomeArquivo);
-        boolean achou = false;
-        for(int i =0; i< LinhasArquivo.size(); i++){
-            String[] Compare = LinhasArquivo.get(i).split(",");
-            for (String S : Compare) {
-                if (S.equals(ID)) {
-                    LinhasArquivo.remove(i);
-                    achou = true;
-                }
-            }
-        }
-        if (achou) UpdateArchive(LinhasArquivo, NomeArquivo); 
+      
     }
         
  

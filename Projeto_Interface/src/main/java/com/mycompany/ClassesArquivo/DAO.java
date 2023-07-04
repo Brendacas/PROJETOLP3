@@ -13,6 +13,6 @@ import java.util.ArrayList;
 public interface DAO {
     public void createArchive(String nome);
     public void ReadArchive(String nome);
-    public void UpdateArchive(ArrayList<String> Linhas,String nome);
+    public void UpdateArchive(String nome);
     public void DeleteArchive(ArrayList<String> Linhas,String nome);
 }
