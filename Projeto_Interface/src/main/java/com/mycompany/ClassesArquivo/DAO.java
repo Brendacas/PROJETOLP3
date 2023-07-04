@@ -11,6 +11,6 @@ package com.mycompany.ClassesArquivo;
 public interface DAO {
     public void CreateArchive(String name);
     public void ReadArchive(String name);
-    public void UpdateArchive(String name);
+    public void UpdateArchive(String name, String matricula, String email, String Senha);
     public void DeleteArchive(String name);
 }

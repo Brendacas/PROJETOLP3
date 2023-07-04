@@ -31,15 +31,8 @@ public class Aluno extends Pessoa{
     public String getMatricula (){
         return matricula;
     }
-    
   
      public boolean autenticar(String matricula, String senha) {
         return this.matricula.equals(matricula) && this.senhaAluno.equals(senha);
     }
-     /*
-    public void calcularMedia() {
-        float[] notas = disciplina.getNotas();
-        int creditos = disciplina.getCredito();
-        disciplina.calcularMedia(notas, creditos);
-    }*/
 }
