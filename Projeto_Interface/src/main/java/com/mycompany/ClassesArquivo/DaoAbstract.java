@@ -8,22 +8,18 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.EOFException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
 
-<<<<<<< HEAD
-
-public class DaoAbstract implements DAO {
-=======
 /**
  *
  * @author estevao
  */
-public abstract class DaoAbstract implements DAO {
-    // Path diretorio = Paths.get("documentos/java...");
->>>>>>> abb406f7540a261bb199330f6eb1dd28e7ff126c
+public class DaoAbstract implements DAO {
 
     @Override
     public void createArchive(String name) {
@@ -42,31 +38,18 @@ public abstract class DaoAbstract implements DAO {
 
     @Override
     public void ReadArchive(String name) {
-<<<<<<< HEAD
         String csvArquivo = "aluno.csv";
-=======
-        String csvArquivo = "caminho";
->>>>>>> abb406f7540a261bb199330f6eb1dd28e7ff126c
 
         BufferedReader conteudoCSV = null;
 
         String linha = "";
-<<<<<<< HEAD
 
-=======
-        String csvSeparadorCampo = ";";
->>>>>>> abb406f7540a261bb199330f6eb1dd28e7ff126c
         try {
             conteudoCSV = new BufferedReader(new FileReader(csvArquivo));
 
             while ((linha = conteudoCSV.readLine()) != null) {
-<<<<<<< HEAD
                 String[] elemento = linha.split(";");
-                System.out.println("Matricula: " + elemento[0] + " Nome: " + elemento[1]); 
-=======
-                String[] elemento = linha.split(csvSeparadorCampo);
-                System.out.print("dcolunas"); // printar as colunas
->>>>>>> abb406f7540a261bb199330f6eb1dd28e7ff126c
+                System.out.println("Nome: " + elemento[0] + " Matricula: " + elemento[1]); // printar as colunas
             }
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não encontrado : \n" + e.getMessage());
@@ -82,37 +65,21 @@ public abstract class DaoAbstract implements DAO {
             }
         }
     }
-<<<<<<< HEAD
 
     public void WriterArchive(String nome) {
         String csvArquivo = "aluno.csv";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvArquivo, true))) {
 
-            bw.write("202121125;Brenda;");
+            bw.write("escreve merda");
             bw.newLine();
         } catch (Exception e) {
             e.printStackTrace();
-=======
-
-    @Override
-    public void UpdateArchive(String name, String id, String email, String Senha) {
-
-        ArrayList<String> LinhasArquivo = new ArrayList<String>();
-        LinhasArquivo = ReadArchive(NomeArquivo);
-        boolean achou = false;
-        for (int i = 0; i < LinhasArquivo.size(); i++) {
-
-            if (achou) {
-                UpdateArchive(LinhasArquivo, NomeArquivo);
-            }
->>>>>>> abb406f7540a261bb199330f6eb1dd28e7ff126c
         }
     }
 
     @Override
-<<<<<<< HEAD
-    public void UpdateArchive(String nomeArquivo, String id, String name, String email, String senha) {
+    public void UpdateArchive(String nomeArquivo, String name, String id, String email, String senha) {
 
         ArrayList<String> list = new ArrayList();
 
@@ -127,28 +94,14 @@ public abstract class DaoAbstract implements DAO {
                 item = linha.split(";");
 
                 if (item[0].equals(id)) {
-                    list.add(id + ";" + name + ";" + email + ";" + senha + ";");
+                    list.add(name + ";" + id + ";" + email + ";" + senha + ";");
                 } else {
                     list.add(linha);
-=======
-    public void Delete(String ID, String NomeArquivo) {
-
-        ArrayList<String> LinhasArquivo = new ArrayList<String>();
-        LinhasArquivo = ReadArchive(NomeArquivo);
-        boolean achou = false;
-        for (int i = 0; i < LinhasArquivo.size(); i++) {
-            String[] Compare = LinhasArquivo.get(i).split(",");
-            for (String S : Compare) {
-                if (S.equals(ID)) {
-                    LinhasArquivo.remove(i);
-                    achou = true;
->>>>>>> abb406f7540a261bb199330f6eb1dd28e7ff126c
                 }
             }
         } catch (IOException ex) {
             Logger.getLogger(DaoAbstract.class.getName()).log(Level.SEVERE, null, ex);
         }
-<<<<<<< HEAD
 
         // armazenados no ArrayList depois escreve
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo))) {
@@ -200,13 +153,9 @@ public abstract class DaoAbstract implements DAO {
     public static void main(String[] args) {
         DaoAbstract a = new DaoAbstract();
 
-        //a.WriterArchive("aluno.csv");
-        //a.ReadArchive("aluno.csv");
-        //a.UpdateArchive("aluno.csv", "202121125", "Israel", "israel@uesc", "sdsef");
+        // a.WriterArchive("aluno.csv");
+        // a.ReadArchive("aluno.csv");
+        //a.UpdateArchive("aluno.csv", "Carlao", "202121135", "israel@uesc", "sdsef");
         a.DeleteArchive("aluno.csv", "202121125");
-=======
-        if (achou)
-            UpdateArchive(LinhasArquivo, NomeArquivo);
->>>>>>> abb406f7540a261bb199330f6eb1dd28e7ff126c
     }
 }
