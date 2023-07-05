@@ -15,7 +15,9 @@ public interface DAO {
 
     public void ReadArchive(String nome);
 
-    public void UpdateArchive(String name, String matricula, String email, String Senha);
+    public void UpdateArchive(String nomeArquivo, String name, String matricula, String email, String Senha);
 
-    public void DeleteArchive(ArrayList<String> Linhas, String nome);
+    public void DeleteArchive(String nomeArquivo, String ID);
+
+    public void WriterArchive(String nome);
 }
