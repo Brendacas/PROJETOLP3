@@ -49,7 +49,7 @@ public class DaoAbstract implements DAO {
 
             while ((linha = conteudoCSV.readLine()) != null) {
                 String[] elemento = linha.split(";");
-                System.out.println("Nome: " + elemento[0] + " Matricula: " + elemento[1]); // printar as colunas
+                System.out.println("Matricula " + elemento[0] + " Nome " + elemento[1]); // printar as colunas
             }
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não encontrado : \n" + e.getMessage());
@@ -71,7 +71,7 @@ public class DaoAbstract implements DAO {
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvArquivo, true))) {
 
-            bw.write("escreve merda");
+            bw.write("202121125;Brenda;");
             bw.newLine();
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,7 +79,7 @@ public class DaoAbstract implements DAO {
     }
 
     @Override
-    public void UpdateArchive(String nomeArquivo, String name, String id, String email, String senha) {
+    public void UpdateArchive(String nomeArquivo, String id, String name, String email, String senha) {
 
         ArrayList<String> list = new ArrayList();
 
@@ -94,7 +94,7 @@ public class DaoAbstract implements DAO {
                 item = linha.split(";");
 
                 if (item[0].equals(id)) {
-                    list.add(name + ";" + id + ";" + email + ";" + senha + ";");
+                    list.add(id + ";" + name + ";" + email + ";" + senha + ";");
                 } else {
                     list.add(linha);
                 }
@@ -153,9 +153,9 @@ public class DaoAbstract implements DAO {
     public static void main(String[] args) {
         DaoAbstract a = new DaoAbstract();
 
-        // a.WriterArchive("aluno.csv");
+         a.WriterArchive("aluno.csv");
         // a.ReadArchive("aluno.csv");
-        //a.UpdateArchive("aluno.csv", "Carlao", "202121135", "israel@uesc", "sdsef");
-        a.DeleteArchive("aluno.csv", "202121125");
+        //a.UpdateArchive("aluno.csv", "202121125", "Israel", "israel@uesc", "sdsef");
+        //a.DeleteArchive("aluno.csv", "202121125");
     }
 }
