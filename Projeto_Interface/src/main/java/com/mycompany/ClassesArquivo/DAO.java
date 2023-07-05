@@ -20,5 +20,4 @@ public interface DAO {
     public void DeleteArchive(String nomeArquivo, String ID);
 
     public void WriterArchive(String nome);
-
 }

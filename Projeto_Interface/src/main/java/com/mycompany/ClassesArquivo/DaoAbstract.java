@@ -1,4 +1,3 @@
-
 package com.mycompany.ClassesArquivo;
 
 import com.mycompany.Classes_base.Aluno;
@@ -8,9 +7,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.EOFException;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
@@ -73,6 +70,7 @@ public class DaoAbstract implements DAO {
 
             bw.write(novaLinha);
             bw.newLine();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
