@@ -66,12 +66,12 @@ public class DaoAbstract implements DAO {
         }
     }
 
-    public void WriterArchive(String nome) {
-        String csvArquivo = "aluno.csv";
+    @Override
+    public void WriterArchive(String nomeArquivo, String novaLinha) {
+     
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, true))) {
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvArquivo, true))) {
-
-            bw.write("202121125;Brenda;");
+            bw.write(novaLinha);
             bw.newLine();
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,7 +79,7 @@ public class DaoAbstract implements DAO {
     }
 
     @Override
-    public void UpdateArchive(String nomeArquivo, String id, String name, String email, String senha) {
+    public void UpdateArchive(String nomeArquivo, String novaLinha) {
 
         ArrayList<String> list = new ArrayList();
 
@@ -158,4 +158,6 @@ public class DaoAbstract implements DAO {
         //a.UpdateArchive("aluno.csv", "202121125", "Israel", "israel@uesc", "sdsef");
         //a.DeleteArchive("aluno.csv", "202121125");
     }
+
+  
 }

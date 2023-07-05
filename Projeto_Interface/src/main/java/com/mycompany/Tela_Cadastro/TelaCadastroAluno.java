@@ -1,7 +1,9 @@
 package com.mycompany.Tela_Cadastro;
 
+import com.mycompany.ClassesArquivo.DaoAbstract;
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Aluno;
+import com.mycompany.Classes_Form.TelaLogin;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -159,23 +161,20 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                 && !senha.isEmpty() && !confirmarSenha.isEmpty()) {
             
             if (senha.equals(confirmarSenha)) {
-                
-                novo.setNomeString(nome);
-                novo.setEmailString(email);
-                novo.setCpfInt(cpf);
-                novo.setMatricula(matricula);
-                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
-                
-                /*ERRO EM TELA LOGIN FALTA AINDA A TELA LOGING*/
-                TelaLogin.setArray_Aluno(novo);
-                
-                dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
-            }
+
+            novo.setNomeString(nome);
+            novo.setEmailString(email);
+            novo.setCpfInt(cpf);
+            novo.setMatricula(matricula);
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+
+            DaoAbstract dao = new DaoAbstract();
+            dao.WriterArchive("alunos.csv", novo);
+
+            dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Porfavor, preencha todos os campos!");
-        }
+            JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
+            }
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 
 
