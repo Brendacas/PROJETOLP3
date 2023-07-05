@@ -16,7 +16,7 @@ import java.util.ArrayList;
  *
  * @author estevao
  */
-public class DaoAbstract implements DAO {
+public abstract class DaoAbstract implements DAO {
 
     @Override
     public void createArchive(String name) {
@@ -101,7 +101,7 @@ public class DaoAbstract implements DAO {
             Logger.getLogger(DaoAbstract.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        // armazenados no ArrayList depois escreve
+        //armazenados no ArrayList depois escreve
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo))) {
 
             for (String a : list) {
