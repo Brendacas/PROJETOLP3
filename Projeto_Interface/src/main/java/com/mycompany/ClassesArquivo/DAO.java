@@ -16,16 +16,8 @@ public interface DAO {
     public void ReadArchive(String nome);
 
     public void UpdateArchive(String nomeArquivo, String name, String matricula, String email, String Senha);
-<<<<<<< HEAD
 
     public void DeleteArchive(String nomeArquivo, String ID);
 
     public void WriterArchive(String nome);
-=======
-
-    public void DeleteArchive(String nomeArquivo, String ID);
-
-    public void WriterArchive(String nome);
-
->>>>>>> 3a52089d8d925e7656864ad11c15e8d0d0cd224f
 }
