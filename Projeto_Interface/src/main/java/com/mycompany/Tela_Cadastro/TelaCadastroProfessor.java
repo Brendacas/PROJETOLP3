@@ -171,7 +171,6 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
                 
                 String ProfessorString = (novo.getID() + ";" + novo.getNomeString() + ";" + novo.getCpfString() +
                         ";" + novo.getEmailString() + ";" + senha);
-                
                 DaoAbstract  DAO= new DaoAbstract();
                 DAO.WriterArchive("professor.csv", ProfessorString);
                 
