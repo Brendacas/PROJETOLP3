@@ -1,7 +1,7 @@
 package com.mycompany.Tela_Cadastro;
 
 //Importação de pacotes necessários
-//import com.mycompany.ClassesArquivo.DaoAbstract;
+import com.mycompany.ClassesArquivo.DaoAbstract;
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Disciplina;
 import java.io.FileWriter;
@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+
 
 
 public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
@@ -141,29 +142,20 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
            String codigo = TextFieldCodigDisc.getText();
            String creditos = TextFieldNumeroCreditos.getText();
            String iD = TextFieldIdProfessor.getText();
-            String csvArquivo = "disciplina.csv";
+           
+           String novaLinha;
            if (!nomeDisciplina.isEmpty() && !codigo.isEmpty() && !creditos.isEmpty() && !iD.isEmpty()) {
                Disciplina novo = new Disciplina();
                novo.setNomeDisciplina(nomeDisciplina);
                novo.setCodigoDisciplina(codigo);
                novo.setCreditos(Integer.parseInt(creditos));
+            
                
-               try(BufferedWriter bw = new BufferedWriter(new FileWriter(csvArquivo, true))){
-        
-                   bw.write(novo.getNomeDisciplina()+ ";" + novo.getCodigoDisciplina() + ";" + novo.getCredito() + ";");
-                   bw.newLine();
-                   
-                   JOptionPane.showMessageDialog(null, "Disciplina cadastrada com sucesso!");
-               } catch(IOException ex){
-                    JOptionPane.showMessageDialog(null, "Erro ao salvar!"+ ex.getMessage());
-                       }
-             /*  
+               novaLinha= novo.getNomeDisciplina()+ ";" + novo.getCodigoDisciplina() + ";" + novo.getCredito() + ";" ;
                DaoAbstract dao = new DaoAbstract();
-               dao.WriterArchive("disciplinas.csv", novo.getNomeDisciplina(), novo.getCodigoDisciplina(), novo.getCredito(), iD);
-               */
-             
-           } else {
-               JOptionPane.showMessageDialog(null, "ID do Professor inválido");
+               dao.WriterArchive("disciplinas.csv", novaLinha);
+
+    
            }
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 
@@ -186,6 +178,7 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
             String id = dados[0];
             String nome = dados[1];
             String email = dados[2];
+            
             // Constrói a string com as informações do professor
             listaProfessores += "ID: " + id + "\n";
             listaProfessores += "Nome: " + nome + "\n";
