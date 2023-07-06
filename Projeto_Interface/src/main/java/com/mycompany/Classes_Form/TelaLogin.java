@@ -133,10 +133,10 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         // Realiza a leitura dos dados do arquivo usando o método ReadArchive do DAO
         ArrayList<String> linhasArquivo = new ArrayList<String>();
         linhasArquivo = dao.ReadArchive(nomeArquivo);
-        
-        String []Dados;
 
-        for (String linha : linhasArquivo) { 
+        String[] Dados;
+
+        for (String linha : linhasArquivo) {
             Dados = linha.split(";");
 
             if (usuario.equals(Dados[0]) && senha.equals(Dados[4])) {
@@ -175,9 +175,14 @@ public class TelaLogin extends javax.swing.JInternalFrame {
             adm.setVisible(true);
         } else if (ehProfessor) {
             JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem-vindo, Professor!");
+<<<<<<< HEAD
             dispose();
             ProfessorForm prof = new ProfessorForm();
            
+=======
+            setVisible(false);
+            TelaProfessor prof = new TelaProfessor();
+>>>>>>> 29f50d4fc60aeaa02e36e2a0d7aac2644658c522
             prof.setVisible(true);
 
         } else if (ehAluno) {
@@ -191,7 +196,7 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         }
 
     }//GEN-LAST:event_BtnEntrarActionPerformed
- 
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEntrar;
