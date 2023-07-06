@@ -4,6 +4,10 @@
  */
 package com.mycompany.Classes_Form;
 
+import com.mycompany.ClassesArquivo.DaoAbstract;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estevao
@@ -41,8 +45,18 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         LblSenha.setText("Senha:");
 
         BtnEntrar.setText("Entrar");
+        BtnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEntrarActionPerformed(evt);
+            }
+        });
 
         BtnLimpar.setText("Limpar");
+        BtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,6 +106,62 @@ public class TelaLogin extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
+        TxtFieldUsuario.setText("");
+        PassFieldSenha.setText("");
+    }//GEN-LAST:event_BtnLimparActionPerformed
+
+    private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
+          boolean ehAluno = false, ehProfessor = false;
+          String usuario = TxtFieldUsuario.getText();
+          String senha = PassFieldSenha.getText();
+
+          // Verifica se o usuário é um professor
+          if (verificarUsuario(usuario, senha, "professores.csv")) {
+              ehProfessor = true;
+          }
+
+          // Verifica se o usuário é um aluno
+          if (verificarUsuario(usuario, senha, "alunos.csv")) {
+              ehAluno = true;
+          }
+
+          if (usuario.equals("usuario1") && senha.equals("senha1")) {
+              JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem-vindo ADM");
+              setVisible(false);
+              TelaAdmin adm = new TelaAdmin();
+              adm.setVisible(true);
+          } else if (ehProfessor) {
+              JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem-vindo, Professor!");
+              // Restante do código para professor
+          } else if (ehAluno) {
+              JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem-vindo, Aluno!");
+              // Restante do código para aluno
+          } else {
+              JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
+          }
+        }
+
+        private boolean verificarUsuario(String usuario, String senha, String nomeArquivo) {
+          DaoAbstract dao = new DaoAbstract();
+
+          // Realiza a leitura dos dados do arquivo usando o método ReadArchive do DAO
+          ArrayList<String> linhasArquivo = dao.ReadArchive(nomeArquivo);
+
+          for (String linha : linhasArquivo) {
+              String[] dados = linha.split(";");
+              String usuarioArquivo = dados[0];
+              String senhaArquivo = dados[1];
+
+              if (usuario.equals(usuarioArquivo) && senha.equals(senhaArquivo)) {
+                  return true;
+              }
+          }
+
+          return false;
+
+    }//GEN-LAST:event_BtnEntrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
