@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
     <Property name="iconifiable" type="boolean" value="true"/>
@@ -32,20 +39,23 @@
                   <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="lblCpf" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="lblSenha" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="TextFieldNome" pref="173" max="32767" attributes="0"/>
-                  <Component id="TextFieldCpf" alignment="0" max="32767" attributes="0"/>
-                  <Component id="TextFieldSenha" alignment="0" max="32767" attributes="0"/>
+                  <Component id="TextFieldNome" max="32767" attributes="0"/>
+                  <Component id="TextFieldCPF" max="32767" attributes="0"/>
+                  <Component id="PasswordFieldSenha" pref="173" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="46" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="lblMatricula" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblConfirmaSenha" min="-2" max="-2" attributes="0"/>
-                      <Component id="TextFieldConfirmaSenha" pref="173" max="32767" attributes="0"/>
-                      <Component id="TextFieldMatricula" alignment="0" max="32767" attributes="0"/>
-                      <Component id="TextFiledEmail" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="ButtonSalvar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblMatricula" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblConfirmaSenha" min="-2" max="-2" attributes="0"/>
+                          <Component id="TextFieldMatricula" alignment="0" max="32767" attributes="0"/>
+                          <Component id="PasswordFieldConfSenha" alignment="0" pref="173" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
+                  <Component id="TextFieldEmail" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
@@ -62,7 +72,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="TextFieldNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="TextFiledEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TextFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -70,9 +80,9 @@
                   <Component id="lblMatricula" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="TextFieldCpf" min="-2" max="-2" attributes="0"/>
-                  <Component id="TextFieldMatricula" alignment="1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="TextFieldCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TextFieldMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -80,11 +90,13 @@
                   <Component id="lblSenha" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="TextFieldSenha" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="TextFieldConfirmaSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="PasswordFieldSenha" min="-2" max="-2" attributes="0"/>
+                  <Component id="PasswordFieldConfSenha" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="ButtonSalvar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -120,23 +132,25 @@
         <Property name="text" type="java.lang.String" value="Confirmar senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextFieldNome">
+    <Component class="javax.swing.JButton" name="ButtonSalvar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salvar"/>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldNomeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonSalvarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextFiledEmail">
+    <Component class="javax.swing.JTextField" name="TextFieldNome">
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextFieldCpf">
+    <Component class="javax.swing.JTextField" name="TextFieldEmail">
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextFieldMatricula">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldMatriculaActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="TextFieldCPF">
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextFieldSenha">
+    <Component class="javax.swing.JTextField" name="TextFieldMatricula">
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="TextFieldConfirmaSenha">
+    <Component class="javax.swing.JPasswordField" name="PasswordFieldSenha">
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="PasswordFieldConfSenha">
     </Component>
   </SubComponents>
 </Form>

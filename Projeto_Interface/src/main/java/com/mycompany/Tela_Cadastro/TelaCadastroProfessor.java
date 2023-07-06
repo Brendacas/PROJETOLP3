@@ -1,6 +1,7 @@
 package com.mycompany.Tela_Cadastro;
 
 //Importação de classes necessarias
+import com.mycompany.ClassesArquivo.DaoAbstract;
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Professor;
 
@@ -166,9 +167,15 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
                 novo.setEmailString(email);
                 novo.setCpfString(cpf);
                 novo.setID(iD);
-
+                
+                String ProfessorString = (novo.getID() + ";" + novo.getNomeString() + ";" + novo.getCpfString() +
+                        ";" + novo.getEmailString() + ";" + senha);
+                
+                DaoAbstract  DAO= new DaoAbstract();
+                DAO.DeleteArchive("professor.csv", ProfessorString);
+                
                 JOptionPane.showMessageDialog(null, "Cadastro realizado!");
-                //TelaLogin.setArray_ProfessorSemProf(novo);
+                
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
