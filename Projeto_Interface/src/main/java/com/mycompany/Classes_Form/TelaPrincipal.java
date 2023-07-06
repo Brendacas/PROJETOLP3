@@ -1,7 +1,5 @@
 package com.mycompany.Classes_Form;
 
-import com.mycompany.Tela_Cadastro.TelaCadastroAluno;
-import com.mycompany.Tela_Cadastro.TelaCadastroProfessor;
 
 public class TelaPrincipal extends javax.swing.JFrame {
 
@@ -91,9 +89,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        TelaAdmin adm = new TelaAdmin();
-        jDesktopPane1.add(adm);
-        adm.setVisible(true);
+        TelaLogin login = new TelaLogin();
+        jDesktopPane1.add(login);
+        login.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {

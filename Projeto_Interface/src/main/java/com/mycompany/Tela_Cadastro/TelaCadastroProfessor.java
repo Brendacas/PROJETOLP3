@@ -156,8 +156,8 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
         String confirmarSenha = PasswordFieldConfirmaSenha.getText();
 
         //Verificação de campos vazios
-       // if (!nome.isEmpty() && !email.isEmpty() && !cpf.isEmpty() && !iD.isEmpty()
-               // && !senha.isEmpty() && !confirmarSenha.isEmpty()) {
+          if (!nome.isEmpty() && !email.isEmpty() && !cpf.isEmpty() && !iD.isEmpty()
+               && !senha.isEmpty() && !confirmarSenha.isEmpty()) {
 
             //Verificação de senha igual
             if (senha.equals(confirmarSenha)) {
@@ -180,9 +180,10 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
             
-        } /*else {
+        } else {
             JOptionPane.showMessageDialog(null, "Porfavor, preencha todos os campos!");
-        }*/
+        }
+          }
 
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 

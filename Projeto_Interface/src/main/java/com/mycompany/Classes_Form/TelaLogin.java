@@ -156,16 +156,22 @@ public class TelaLogin extends javax.swing.JInternalFrame {
             adm.setVisible(true);
         } else if (ehProfessor) {
             JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem-vindo, Professor!");
+            dispose();
+            ProfessorForm prof = new ProfessorForm();
+            prof.setVisible(true);
 
         } else if (ehAluno) {
             JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem-vindo, Aluno!");
+            setVisible(false);
+            TelaAluno aluno = new TelaAluno();
+            aluno.setVisible(true);
 
         } else {
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
         }
 
     }//GEN-LAST:event_BtnEntrarActionPerformed
-
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEntrar;
