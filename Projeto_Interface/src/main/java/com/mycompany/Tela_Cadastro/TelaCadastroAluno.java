@@ -34,18 +34,23 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         lblNome = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
         lblMatricula = new javax.swing.JLabel();
         lblCpf = new javax.swing.JLabel();
         lblSenha = new javax.swing.JLabel();
         lblConfirmaSenha = new javax.swing.JLabel();
-        TextFieldNome = new javax.swing.JFormattedTextField();
-        TextFiledEmail = new javax.swing.JFormattedTextField();
-        TextFieldCpf = new javax.swing.JFormattedTextField();
-        TextFieldMatricula = new javax.swing.JFormattedTextField();
-        TextFieldSenha = new javax.swing.JFormattedTextField();
-        TextFieldConfirmaSenha = new javax.swing.JFormattedTextField();
+        ButtonSalvar = new javax.swing.JButton();
+        TextFieldNome = new javax.swing.JTextField();
+        TextFieldEmail = new javax.swing.JTextField();
+        TextFieldCPF = new javax.swing.JTextField();
+        TextFieldMatricula = new javax.swing.JTextField();
+        PasswordFieldSenha = new javax.swing.JPasswordField();
+        PasswordFieldConfSenha = new javax.swing.JPasswordField();
+        ButtonLimpar = new javax.swing.JButton();
+
+        jFormattedTextField1.setText("jFormattedTextField1");
 
         setClosable(true);
         setIconifiable(true);
@@ -63,15 +68,17 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
 
         lblConfirmaSenha.setText("Confirmar senha:");
 
-        TextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+        ButtonSalvar.setText("Salvar");
+        ButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldNomeActionPerformed(evt);
+                ButtonSalvarActionPerformed(evt);
             }
         });
 
-        TextFieldMatricula.addActionListener(new java.awt.event.ActionListener() {
+        ButtonLimpar.setText("Limpar");
+        ButtonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldMatriculaActionPerformed(evt);
+                ButtonLimparActionPerformed(evt);
             }
         });
 
@@ -85,19 +92,23 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                     .addComponent(lblNome)
                     .addComponent(lblCpf)
                     .addComponent(lblSenha)
-                    .addComponent(TextFieldNome, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                    .addComponent(TextFieldCpf)
-                    .addComponent(TextFieldSenha))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TextFieldNome)
+                    .addComponent(TextFieldCPF)
+                    .addComponent(PasswordFieldSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblEmail)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblMatricula)
-                        .addComponent(lblConfirmaSenha)
-                        .addComponent(TextFieldConfirmaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                        .addComponent(TextFieldMatricula)
-                        .addComponent(TextFiledEmail)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                    .addComponent(lblMatricula)
+                    .addComponent(lblConfirmaSenha)
+                    .addComponent(TextFieldMatricula)
+                    .addComponent(PasswordFieldConfSenha)
+                    .addComponent(TextFieldEmail)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(ButtonSalvar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonLimpar)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,45 +120,92 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextFiledEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblCpf)
                     .addComponent(lblMatricula))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextFieldMatricula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextFieldMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblConfirmaSenha)
                     .addComponent(lblSenha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PasswordFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PasswordFieldConfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextFieldConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(58, Short.MAX_VALUE))
+                    .addComponent(ButtonSalvar)
+                    .addComponent(ButtonLimpar))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldNomeActionPerformed
+    private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
+        
+        String Nome = TextFieldNome.getText();
+        String CPF = TextFieldCPF.getText();
+        String Matricula = TextFieldMatricula.getText();
+        String EMAIL = TextFieldEmail.getText();
+        String Senha = PasswordFieldSenha.getText();
+        String ConfirmaSenha = PasswordFieldConfSenha.getText();
+        
+        if (!Nome.isEmpty() && !EMAIL.isEmpty() && !CPF.isEmpty() && !Matricula.isEmpty()
+                && !Senha.isEmpty() && !ConfirmaSenha.isEmpty()) {
 
-    private void TextFieldMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldMatriculaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldMatriculaActionPerformed
+            //Verificação de senha igual
+            if (Senha.equals(ConfirmaSenha)) {
+
+                Aluno ObjetoAluno = new Aluno();
+                ObjetoAluno.setNomeString(Nome);
+                ObjetoAluno.setMatricula(Matricula);
+                ObjetoAluno.setCpfString(CPF);
+                ObjetoAluno.setEmailString(EMAIL);
+                
+                String AlunoString = (ObjetoAluno.getMatricula() + ";" + ObjetoAluno.getNomeString() + ";" + ObjetoAluno.getCpfString() +
+                        ";" + ObjetoAluno.getEmailString() + ";" + Senha);
+                
+                DaoAbstract  DAO= new DaoAbstract();
+                DAO.DeleteArchive("aluno.csv", AlunoString);
+                
+                JOptionPane.showMessageDialog(null, "Cadastro realizado!");
+                
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Porfavor, preencha todos os campos!");
+        }
+        
+    }//GEN-LAST:event_ButtonSalvarActionPerformed
+
+    private void ButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLimparActionPerformed
+        PasswordFieldConfSenha.setText("");
+        PasswordFieldSenha.setText("");
+        TextFieldCPF.setText("");
+        TextFieldEmail.setText("");
+        TextFieldMatricula.setText("");
+        TextFieldNome.setText("");
+    }//GEN-LAST:event_ButtonLimparActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField TextFieldConfirmaSenha;
-    private javax.swing.JFormattedTextField TextFieldCpf;
-    private javax.swing.JFormattedTextField TextFieldMatricula;
-    private javax.swing.JFormattedTextField TextFieldNome;
-    private javax.swing.JFormattedTextField TextFieldSenha;
-    private javax.swing.JFormattedTextField TextFiledEmail;
+    private javax.swing.JButton ButtonLimpar;
+    private javax.swing.JButton ButtonSalvar;
+    private javax.swing.JPasswordField PasswordFieldConfSenha;
+    private javax.swing.JPasswordField PasswordFieldSenha;
+    private javax.swing.JTextField TextFieldCPF;
+    private javax.swing.JTextField TextFieldEmail;
+    private javax.swing.JTextField TextFieldMatricula;
+    private javax.swing.JTextField TextFieldNome;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel lblConfirmaSenha;
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblEmail;
