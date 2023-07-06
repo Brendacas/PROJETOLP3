@@ -162,6 +162,7 @@ public class AlunoForm extends javax.swing.JInternalFrame {
             
             for(int i = 1; i < LinhasArquivos.size(); i++){
                 String []Compare = LinhasArquivos.get(i).split(";");
+                
                 if(Compare[0].equals(Matricula)){
                     float Nota = (Float.parseFloat(Compare[1]) + Float.parseFloat(Compare[2]) + Float.parseFloat(Compare[3]))/3;
                     JOptionPane.showMessageDialog(null, "Sua nota é: " + Nota);
