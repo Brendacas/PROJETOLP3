@@ -42,11 +42,11 @@ public class Pessoa {
         this.emailString = emailString;
     }
 
-    public String getCpfInt() {
+    public String getCpfString() {
         return cpf;
     }
 
-    public void setCpfInt(String cpfInt) {
+    public void setCpfString(String cpfInt) {
         this.cpf = cpfInt;
     }
 

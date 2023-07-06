@@ -39,15 +39,12 @@
               <EmptySpace pref="46" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="ButtonSalvar" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblMatricula" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblConfirmaSenha" min="-2" max="-2" attributes="0"/>
-                          <Component id="TextFieldConfirmaSenha" pref="173" max="32767" attributes="0"/>
-                          <Component id="TextFieldMatricula" alignment="0" max="32767" attributes="0"/>
-                          <Component id="TextFiledEmail" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lblMatricula" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblConfirmaSenha" min="-2" max="-2" attributes="0"/>
+                      <Component id="TextFieldConfirmaSenha" pref="173" max="32767" attributes="0"/>
+                      <Component id="TextFieldMatricula" alignment="0" max="32767" attributes="0"/>
+                      <Component id="TextFiledEmail" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="51" max="32767" attributes="0"/>
@@ -87,9 +84,7 @@
                   <Component id="TextFieldSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="TextFieldConfirmaSenha" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="ButtonSalvar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="58" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -142,14 +137,6 @@
     <Component class="javax.swing.JFormattedTextField" name="TextFieldSenha">
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="TextFieldConfirmaSenha">
-    </Component>
-    <Component class="javax.swing.JButton" name="ButtonSalvar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Salvar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonSalvarActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

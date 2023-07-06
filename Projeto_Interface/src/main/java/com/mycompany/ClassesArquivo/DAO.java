@@ -13,4 +13,6 @@ public interface DAO {
     public void DeleteArchive(String nomeArquivo, String ID);
 
     public void WriterArchive(String nomeArquivo, ArrayList<String> novaLinha);
+        
+    public void WriterArchive(String nomeArquivo, String novaLinha);
 }

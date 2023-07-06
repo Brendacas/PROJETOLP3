@@ -4,6 +4,7 @@ import com.mycompany.ClassesArquivo.DaoAbstract;
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Aluno;
 import com.mycompany.Classes_Form.TelaLogin;
+import java.util.ArrayList;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -45,7 +46,6 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
         TextFieldMatricula = new javax.swing.JFormattedTextField();
         TextFieldSenha = new javax.swing.JFormattedTextField();
         TextFieldConfirmaSenha = new javax.swing.JFormattedTextField();
-        ButtonSalvar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -75,13 +75,6 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
             }
         });
 
-        ButtonSalvar.setText("Salvar");
-        ButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonSalvarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,10 +91,13 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblEmail)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(ButtonSalvar)
-                        .addGroup(layout.createPar
-                  
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblMatricula)
+                        .addComponent(lblConfirmaSenha)
+                        .addComponent(TextFieldConfirmaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                        .addComponent(TextFieldMatricula)
+                        .addComponent(TextFiledEmail)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,9 +126,7 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextFieldConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(ButtonSalvar)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
@@ -146,40 +140,8 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldMatriculaActionPerformed
 
-    private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
-       //Criando novo obejto aluno;
-        Aluno novo = new Aluno();
-        
-        String nome = TextFieldNome.getText();
-        String email = TextFiledEmail.getText();
-        String cpf = TextFieldCpf.getText();
-        String matricula = TextFieldMatricula.getText();
-        String senha = TextFieldSenha.getText();
-        String confirmarSenha = TextFieldConfirmaSenha.getText();
-        
-        if (!nome.isEmpty() && !email.isEmpty() && !cpf.isEmpty() && !matricula.isEmpty()
-                && !senha.isEmpty() && !confirmarSenha.isEmpty()) {
-            
-            if (senha.equals(confirmarSenha)) {
-
-            novo.setNomeString(nome);
-            novo.setEmailString(email);
-            novo.setCpfInt(cpf);
-            novo.setMatricula(matricula);
-            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
-
-            DaoAbstract dao = new DaoAbstract();
-            dao.WriterArchive("alunos.csv", novo);
-
-            dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
-            }
-    }//GEN-LAST:event_ButtonSalvarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonSalvar;
     private javax.swing.JFormattedTextField TextFieldConfirmaSenha;
     private javax.swing.JFormattedTextField TextFieldCpf;
     private javax.swing.JFormattedTextField TextFieldMatricula;
