@@ -6,6 +6,7 @@ package com.mycompany.Classes_Form;
 
 import com.mycompany.ClassesArquivo.DaoAbstract;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -113,17 +114,13 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         // Realiza a leitura dos dados do arquivo usando o método ReadArchive do DAO
         ArrayList<String> linhasArquivo = new ArrayList<String>();
         linhasArquivo = dao.ReadArchive(nomeArquivo);
-
-        String [] dados;
-        String usuarioArquivo;
-        String senhaArquivo;
+        
+        String []Dados;
 
         for (String linha : linhasArquivo) { 
-            dados = linha.split(";");
-            usuarioArquivo = dados[0];
-            senhaArquivo = dados[4];
+            Dados = linha.split(";");
 
-            if (usuario.equals(usuarioArquivo) && senha.equals(senhaArquivo)) {
+            if (usuario.equals(Dados[0]) && senha.equals(Dados[4])) {
                 return true;  // Retorna true quando a verificação é bem-sucedida
             }
         }
