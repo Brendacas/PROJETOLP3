@@ -1,10 +1,6 @@
 package com.mycompany.Tela_Cadastro;
 
 //Importação de pacotes necessários
-<<<<<<< HEAD
-//import com.mycompany.ClassesArquivo.DaoAbstract;
-=======
->>>>>>> efd27ac98b6dae5a1844596e4da839b324efd95b
 import com.mycompany.ClassesArquivo.DaoAbstract;
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Disciplina;
@@ -121,7 +117,6 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
 
     private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
 
-<<<<<<< HEAD
         String nomeDisciplina = TextFieldTitulo.getText();
         String codigo = TextFieldCodigDisc.getText();
         String creditos = TextFieldNumeroCreditos.getText();
@@ -144,27 +139,6 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "ID do Professor inválido");
         }
-=======
-           String nomeDisciplina = TextFieldTitulo.getText();
-           String codigo = TextFieldCodigDisc.getText();
-           String creditos = TextFieldNumeroCreditos.getText();
-           String iD = TextFieldIdProfessor.getText();
-           
-           String novaLinha;
-           if (!nomeDisciplina.isEmpty() && !codigo.isEmpty() && !creditos.isEmpty() && !iD.isEmpty()) {
-               Disciplina novo = new Disciplina();
-               novo.setNomeDisciplina(nomeDisciplina);
-               novo.setCodigoDisciplina(codigo);
-               novo.setCreditos(Integer.parseInt(creditos));
-            
-               
-               novaLinha= novo.getNomeDisciplina()+ ";" + novo.getCodigoDisciplina() + ";" + novo.getCredito() + ";" ;
-               DaoAbstract dao = new DaoAbstract();
-               dao.WriterArchive("disciplinas.csv", novaLinha);
-
-    
-           }
->>>>>>> efd27ac98b6dae5a1844596e4da839b324efd95b
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 
     private void ButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLimparActionPerformed
@@ -176,38 +150,6 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_ButtonLimparActionPerformed
 
-<<<<<<< HEAD
-=======
-    private void ButtonListProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListProfessorActionPerformed
-    String listaProfessores = "";
-
-    // Realiza a leitura dos dados do arquivo
-    try (BufferedReader br = new BufferedReader(new FileReader("professores.csv"))) {
-        String linha;
-        while ((linha = br.readLine()) != null) {
-            String[] dados = linha.split(";");
-            String id = dados[0];
-            String nome = dados[1];
-            String email = dados[2];
-            
-            // Constrói a string com as informações do professor
-            listaProfessores += "ID: " + id + "\n";
-            listaProfessores += "Nome: " + nome + "\n";
-            listaProfessores += "Email: " + email + "\n";
-            listaProfessores += "\n";
-        }
-    } catch (IOException ex) {
-        JOptionPane.showMessageDialog(null, "Erro ao ler o arquivo de professores: " + ex.getMessage());
-    }
-
-    if (listaProfessores.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Não há professores cadastrados.");
-    } else {
-        JOptionPane.showMessageDialog(null, listaProfessores);
-    }
-    }//GEN-LAST:event_ButtonListProfessorActionPerformed
-
->>>>>>> efd27ac98b6dae5a1844596e4da839b324efd95b
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonLimpar;
