@@ -43,21 +43,22 @@
                   <Component id="TextFieldCPF" max="32767" attributes="0"/>
                   <Component id="PasswordFieldSenha" pref="173" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="46" max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="ButtonSalvar" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblMatricula" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblConfirmaSenha" min="-2" max="-2" attributes="0"/>
-                          <Component id="TextFieldMatricula" alignment="0" max="32767" attributes="0"/>
-                          <Component id="PasswordFieldConfSenha" alignment="0" pref="173" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="lblMatricula" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblConfirmaSenha" min="-2" max="-2" attributes="0"/>
+                  <Component id="TextFieldMatricula" alignment="0" max="32767" attributes="0"/>
+                  <Component id="PasswordFieldConfSenha" alignment="0" max="32767" attributes="0"/>
                   <Component id="TextFieldEmail" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="ButtonSalvar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="ButtonLimpar" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -95,7 +96,10 @@
                   <Component id="PasswordFieldConfSenha" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="ButtonSalvar" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ButtonSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ButtonLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -151,6 +155,14 @@
     <Component class="javax.swing.JPasswordField" name="PasswordFieldSenha">
     </Component>
     <Component class="javax.swing.JPasswordField" name="PasswordFieldConfSenha">
+    </Component>
+    <Component class="javax.swing.JButton" name="ButtonLimpar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Limpar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLimparActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

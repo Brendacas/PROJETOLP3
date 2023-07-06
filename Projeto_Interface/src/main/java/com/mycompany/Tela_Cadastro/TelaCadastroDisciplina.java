@@ -4,12 +4,6 @@ package com.mycompany.Tela_Cadastro;
 import com.mycompany.ClassesArquivo.DaoAbstract;
 import javax.swing.JOptionPane;
 import com.mycompany.Classes_base.Disciplina;
-import java.io.FileWriter;
-import java.io.FileReader;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-
 
 
 public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
@@ -28,7 +22,6 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
         jLabelNumeroCreditos = new javax.swing.JLabel();
         ButtonSalvar = new javax.swing.JButton();
         ButtonLimpar = new javax.swing.JButton();
-        ButtonListProfessor = new javax.swing.JButton();
         TextFieldTitulo = new javax.swing.JFormattedTextField();
         TextFieldNumeroCreditos = new javax.swing.JFormattedTextField();
         TextFieldIdProfessor = new javax.swing.JFormattedTextField();
@@ -60,13 +53,6 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
             }
         });
 
-        ButtonListProfessor.setText("Listar professores");
-        ButtonListProfessor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonListProfessorActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,29 +66,24 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
                         .addComponent(ButtonLimpar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(ButtonListProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelCodigoDisciplina)
-                                            .addComponent(TextFieldCodigDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(TextFieldTitulo))
-                                        .addGap(43, 43, 43))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabelTitulo)
-                                        .addGap(90, 90, 90)))
+                                    .addComponent(jLabelCodigoDisciplina)
+                                    .addComponent(TextFieldCodigDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TextFieldTitulo))
+                                .addGap(43, 43, 43))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelTitulo)
+                                .addGap(90, 90, 90)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TextFieldIdProfessor)
+                            .addComponent(TextFieldNumeroCreditos)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextFieldIdProfessor)
-                                    .addComponent(TextFieldNumeroCreditos)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelNumeroCreditos)
-                                            .addComponent(jLabelIdProfessor))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)))))
+                                    .addComponent(jLabelNumeroCreditos)
+                                    .addComponent(jLabelIdProfessor))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)))
                         .addGap(80, 80, 80))))
         );
         layout.setVerticalGroup(
@@ -124,9 +105,7 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextFieldCodigDisc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextFieldIdProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonListProfessor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonLimpar)
                     .addComponent(ButtonSalvar))
@@ -138,25 +117,28 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
 
     private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
 
-           String nomeDisciplina = TextFieldTitulo.getText();
-           String codigo = TextFieldCodigDisc.getText();
-           String creditos = TextFieldNumeroCreditos.getText();
-           String iD = TextFieldIdProfessor.getText();
-           
-           String novaLinha;
-           if (!nomeDisciplina.isEmpty() && !codigo.isEmpty() && !creditos.isEmpty() && !iD.isEmpty()) {
-               Disciplina novo = new Disciplina();
-               novo.setNomeDisciplina(nomeDisciplina);
-               novo.setCodigoDisciplina(codigo);
-               novo.setCreditos(Integer.parseInt(creditos));
+        String nomeDisciplina = TextFieldTitulo.getText();
+        String codigo = TextFieldCodigDisc.getText();
+        String creditos = TextFieldNumeroCreditos.getText();
+        String iD = TextFieldIdProfessor.getText();
+        String iDProfessor = TextFieldIdProfessor.getText();
+        
+        if (!nomeDisciplina.isEmpty() && !codigo.isEmpty() && !creditos.isEmpty() && !iD.isEmpty()) {
             
-               
-               novaLinha= novo.getNomeDisciplina()+ ";" + novo.getCodigoDisciplina() + ";" + novo.getCredito() + ";" ;
-               DaoAbstract dao = new DaoAbstract();
-               dao.WriterArchive("disciplinas.csv", novaLinha);
-
-    
-           }
+            Disciplina novaDisciplina = new Disciplina();
+            
+            novaDisciplina.setNomeDisciplina(nomeDisciplina);
+            novaDisciplina.setCodigoDisciplina(codigo);
+            novaDisciplina.setCreditos(Integer.parseInt(creditos));
+            
+            DaoAbstract arquivo = new DaoAbstract();
+            
+            arquivo.WriterArchive("disciplina.csv", novaDisciplina.getCodigoDisciplina() + ";" + novaDisciplina.getNomeDisciplina() + ";" + 
+                    Integer.toString(novaDisciplina.getCredito()) + ";" + iDProfessor);
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "ID do Professor inválido");
+        }
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 
     private void ButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLimparActionPerformed
@@ -165,41 +147,12 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
         TextFieldIdProfessor.setText(" ");
         TextFieldNumeroCreditos.setText(" ");
         TextFieldTitulo.setText(" ");
+        
     }//GEN-LAST:event_ButtonLimparActionPerformed
-
-    private void ButtonListProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListProfessorActionPerformed
-    String listaProfessores = "";
-
-    // Realiza a leitura dos dados do arquivo
-    try (BufferedReader br = new BufferedReader(new FileReader("professores.csv"))) {
-        String linha;
-        while ((linha = br.readLine()) != null) {
-            String[] dados = linha.split(";");
-            String id = dados[0];
-            String nome = dados[1];
-            String email = dados[2];
-            
-            // Constrói a string com as informações do professor
-            listaProfessores += "ID: " + id + "\n";
-            listaProfessores += "Nome: " + nome + "\n";
-            listaProfessores += "Email: " + email + "\n";
-            listaProfessores += "\n";
-        }
-    } catch (IOException ex) {
-        JOptionPane.showMessageDialog(null, "Erro ao ler o arquivo de professores: " + ex.getMessage());
-    }
-
-    if (listaProfessores.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Não há professores cadastrados.");
-    } else {
-        JOptionPane.showMessageDialog(null, listaProfessores);
-    }
-    }//GEN-LAST:event_ButtonListProfessorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonLimpar;
-    private javax.swing.JButton ButtonListProfessor;
     private javax.swing.JButton ButtonSalvar;
     private javax.swing.JFormattedTextField TextFieldCodigDisc;
     private javax.swing.JFormattedTextField TextFieldIdProfessor;
