@@ -3,6 +3,7 @@ package com.mycompany.ClassesArquivo;
 import java.util.ArrayList;
 
 public interface DAO {
+    //Linux >> WINDOWS
     public void createArchive(String nomeArquivo);
 
     public ArrayList<String> ReadArchive(String nomeArquivo);
