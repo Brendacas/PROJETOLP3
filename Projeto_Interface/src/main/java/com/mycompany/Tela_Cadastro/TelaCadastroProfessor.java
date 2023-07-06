@@ -159,7 +159,6 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
         if (!nome.isEmpty() && !email.isEmpty() && !cpf.isEmpty() && !iD.isEmpty()
                 && !senha.isEmpty() && !confirmarSenha.isEmpty()) {
 
-
             //Verificação de senha igual
             if (senha.equals(confirmarSenha)) {
 
@@ -179,12 +178,10 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
-
-          }
-
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Porfavor, preencha todos os campos!");
         }
-
 
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 
