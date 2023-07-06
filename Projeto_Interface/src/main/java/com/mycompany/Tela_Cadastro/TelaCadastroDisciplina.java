@@ -118,22 +118,23 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
     private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
 
         String nomeDisciplina = TextFieldTitulo.getText();
-        String codigo = TextFieldCodigDisc.getText();
         String creditos = TextFieldNumeroCreditos.getText();
-        String iD = TextFieldIdProfessor.getText();
+        String iD = TextFieldCodigDisc.getText();
         String iDProfessor = TextFieldIdProfessor.getText();
         
-        if (!nomeDisciplina.isEmpty() && !codigo.isEmpty() && !creditos.isEmpty() && !iD.isEmpty()) {
+        if (!nomeDisciplina.isEmpty() && !iD.isEmpty() && !creditos.isEmpty() && !iDProfessor.isEmpty()) {
             
             Disciplina novaDisciplina = new Disciplina();
             
             novaDisciplina.setNomeDisciplina(nomeDisciplina);
-            novaDisciplina.setCodigoDisciplina(codigo);
+            novaDisciplina.setCodigoDisciplina(iD);
             novaDisciplina.setCreditos(Integer.parseInt(creditos));
             
+            String novaLinha = novaDisciplina.getNomeDisciplina() + ";" + 
+                    Integer.toString(novaDisciplina.getCredito()) + ";" + iDProfessor;
             DaoAbstract arquivo = new DaoAbstract();
-            arquivo.WriterArchive("disciplina.csv", novaDisciplina.getCodigoDisciplina() + ";" + novaDisciplina.getNomeDisciplina() + ";" + 
-                    Integer.toString(novaDisciplina.getCredito()) + ";" + iDProfessor);
+            
+            arquivo.WriterArchive(iD + ".csv", novaLinha);
             
             JOptionPane.showMessageDialog(null, "Cadastro realizado!");
             dispose();

@@ -18,7 +18,6 @@ import java.util.List;
  * @author estevao
  */
 public class DaoAbstract implements DAO {
-    
 
     @Override
     public void createArchive(String nomeArquivo) {
@@ -64,10 +63,11 @@ public class DaoAbstract implements DAO {
         }
         return (ArrayList<String>) LinhasArquivo;
     }
+
     @Override
     public void WriterArchive(String nomeArquivo, ArrayList<String> atualizacao) {
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, false))) {
 
             for (String string : atualizacao) {
                 bw.write(string);
@@ -75,36 +75,34 @@ public class DaoAbstract implements DAO {
             }
 
         } catch (Exception e) {
-            
+
             e.printStackTrace();
         }
     }
+
     @Override
-    public void WriterArchive(String nomeArquivo, String novalinha){
+    public void WriterArchive(String nomeArquivo, String novalinha) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, true))) {
-                bw.write(novalinha);
-                bw.newLine();
+            bw.write(novalinha);
+            bw.newLine();
 
         } catch (Exception e) {
-            
+
             e.printStackTrace();
         }
     }
+
     @Override
     public void UpdateArchive(String nomeArquivo, String novaLinha, String ID) {
 
         ArrayList<String> list = ReadArchive(nomeArquivo);
 
-        int Ind = -1;
-
         for (String string : list) {
-            Ind++;
             String[] Compare = string.split(";");
-            if (Compare[0].equals(ID))
-                break;
+            if (Compare[0].equals(ID)) {
+                list.add(novaLinha);
+            }else list.add(string);
         }
-        
-        list.add(Ind, novaLinha);
         // armazenados no ArrayList depois escreve
         WriterArchive(nomeArquivo, list);
     }
@@ -115,7 +113,7 @@ public class DaoAbstract implements DAO {
         ArrayList<String> LinhasArquivo = ReadArchive(nomeArquivo);
         int i = -1;
         String[] compare;
-        for(String linha : LinhasArquivo){
+        for (String linha : LinhasArquivo) {
             i++;
             compare = linha.split(";");
             if (compare[0].equals(ID)) {
