@@ -91,8 +91,8 @@ public class DaoAbstract implements DAO {
 
                 item = linha.split(";");
 
-                if (item[0].equals(id)) {
-                    list.add(id + ";" + name + ";" + email + ";" + senha + ";");
+                if (item[0].equals(novaLinha)) {
+                    list.add(novaLinha);
                 } else {
                     list.add(linha);
                 }
@@ -151,7 +151,7 @@ public class DaoAbstract implements DAO {
     public static void main(String[] args) {
         DaoAbstract a = new DaoAbstract();
 
-         a.WriterArchive("aluno.csv");
+         //a.WriterArchive("aluno.csv");
         // a.ReadArchive("aluno.csv");
         //a.UpdateArchive("aluno.csv", "202121125", "Israel", "israel@uesc", "sdsef");
         //a.DeleteArchive("aluno.csv", "202121125");
