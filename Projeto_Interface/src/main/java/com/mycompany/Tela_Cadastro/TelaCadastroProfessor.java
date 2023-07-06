@@ -156,8 +156,8 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
         String confirmarSenha = PasswordFieldConfirmaSenha.getText();
 
         //Verificação de campos vazios
-       // if (!nome.isEmpty() && !email.isEmpty() && !cpf.isEmpty() && !iD.isEmpty()
-               // && !senha.isEmpty() && !confirmarSenha.isEmpty()) {
+        if (!nome.isEmpty() && !email.isEmpty() && !cpf.isEmpty() && !iD.isEmpty()
+                && !senha.isEmpty() && !confirmarSenha.isEmpty()) {
 
             //Verificação de senha igual
             if (senha.equals(confirmarSenha)) {
@@ -167,22 +167,20 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
                 novo.setEmailString(email);
                 novo.setCpfString(cpf);
                 novo.setID(iD);
-                
-                
-                String ProfessorString = (novo.getID() + ";" + novo.getNomeString() + ";" + novo.getCpfString() +
-                        ";" + novo.getEmailString() + ";" + senha);
-                DaoAbstract  DAO= new DaoAbstract();
+
+                String ProfessorString = (novo.getID() + ";" + novo.getNomeString() + ";" + novo.getCpfString()
+                        + ";" + novo.getEmailString() + ";" + senha);
+                DaoAbstract DAO = new DaoAbstract();
                 DAO.WriterArchive("professor.csv", ProfessorString);
-                
+
                 JOptionPane.showMessageDialog(null, "Cadastro realizado!");
-                
+
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
-            
-        } /*else {
-            JOptionPane.showMessageDialog(null, "Porfavor, preencha todos os campos!");
-        }*/
+
+            }
+        }
 
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 

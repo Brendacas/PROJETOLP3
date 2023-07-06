@@ -114,10 +114,10 @@ public class TelaLogin extends javax.swing.JInternalFrame {
         // Realiza a leitura dos dados do arquivo usando o método ReadArchive do DAO
         ArrayList<String> linhasArquivo = new ArrayList<String>();
         linhasArquivo = dao.ReadArchive(nomeArquivo);
-        
-        String []Dados;
 
-        for (String linha : linhasArquivo) { 
+        String[] Dados;
+
+        for (String linha : linhasArquivo) {
             Dados = linha.split(";");
 
             if (usuario.equals(Dados[0]) && senha.equals(Dados[4])) {
@@ -156,9 +156,15 @@ public class TelaLogin extends javax.swing.JInternalFrame {
             adm.setVisible(true);
         } else if (ehProfessor) {
             JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem-vindo, Professor!");
+            setVisible(false);
+            TelaProfessor prof = new TelaProfessor();
+            prof.setVisible(true);
 
         } else if (ehAluno) {
             JOptionPane.showMessageDialog(null, "Acesso autorizado. Bem-vindo, Aluno!");
+            setVisible(false);
+            TelaAluno aluno = new TelaAluno();
+            aluno.setVisible(true);
 
         } else {
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos.");
