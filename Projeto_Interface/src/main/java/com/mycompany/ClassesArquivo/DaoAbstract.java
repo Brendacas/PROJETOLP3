@@ -96,6 +96,22 @@ public class DaoAbstract implements DAO {
     public void UpdateArchive(String nomeArquivo, String novaLinha, String ID) {
 
         ArrayList<String> list = ReadArchive(nomeArquivo);
+        boolean encontrado = false;
+        for (int i = 0; i < list.size(); i++) {
+            String linha = list.get(i);
+            String[] compare = linha.split(";");
+            if (compare[0].equals(ID)) {
+                list.set(i, novaLinha);
+                encontrado = true;
+                break;
+            }
+        }
+        if (!encontrado) {
+            list.add(novaLinha);
+        }
+        WriterArchive(nomeArquivo,list);
+        
+        /*ArrayList<String> list = ReadArchive(nomeArquivo);
 
         for (String string : list) {
             String[] Compare = string.split(";");
@@ -104,7 +120,7 @@ public class DaoAbstract implements DAO {
             }else list.add(string);
         }
         // armazenados no ArrayList depois escreve
-        WriterArchive(nomeArquivo, list);
+        WriterArchive(nomeArquivo, list);*/
     }
 
     @Override

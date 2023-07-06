@@ -4,9 +4,7 @@
  */
 package com.mycompany.Classes_Form;
 
-import com.mycompany.ClassesArquivo.DAO;
 import com.mycompany.ClassesArquivo.DaoAbstract;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -145,7 +143,7 @@ public class ProfessorForm extends javax.swing.JInternalFrame {
                 
         DaoAbstract leitura = new DaoAbstract();
 
-        ArrayList<String> armz = new ArrayList<String>();
+        ArrayList <String> armz = new ArrayList<>();
         
         armz = leitura.ReadArchive(codDisciplina + ".csv");
         
@@ -153,6 +151,7 @@ public class ProfessorForm extends javax.swing.JInternalFrame {
             linha = a.split(";");
             
             if(linha[0].equals(idAluno)){
+               
                 linha[cred] = note;
                 String novaLinha = linha[0] + ";" + linha[1] + ";" + linha[2] + ";" + linha[3] + ";";
                 
