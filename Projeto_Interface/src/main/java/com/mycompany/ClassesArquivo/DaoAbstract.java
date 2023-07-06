@@ -18,6 +18,7 @@ import java.util.List;
  * @author estevao
  */
 public class DaoAbstract implements DAO {
+    
 
     @Override
     public void createArchive(String nomeArquivo) {
@@ -72,6 +73,17 @@ public class DaoAbstract implements DAO {
                 bw.write(string);
                 bw.newLine();
             }
+
+        } catch (Exception e) {
+            
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public void WriterArchive(String nomeArquivo, String novalinha){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, false))) {
+                bw.write(novalinha);
+                bw.newLine();
 
         } catch (Exception e) {
             

@@ -45,7 +45,7 @@ public class Professor extends Pessoa {
     }
     
     public String getInfo() {
-        return "Nome: " + this.getNomeString() + "\nCPF: " + this.getCpfInt() + "\nEmail: " + this.getEmailString() + "\nID: " + this.getID() + "\n";
+        return "Nome: " + this.getNomeString() + "\nCPF: " + this.getCpfString() + "\nEmail: " + this.getEmailString() + "\nID: " + this.getID() + "\n";
     }
 
 

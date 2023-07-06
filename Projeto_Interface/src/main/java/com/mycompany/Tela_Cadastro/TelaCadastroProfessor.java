@@ -164,11 +164,11 @@ public class TelaCadastroProfessor extends javax.swing.JInternalFrame {
                 Professor novo = new Professor();
                 novo.setNomeString(nome);
                 novo.setEmailString(email);
-                novo.setCpfInt(cpf);
+                novo.setCpfString(cpf);
                 novo.setID(iD);
 
                 JOptionPane.showMessageDialog(null, "Cadastro realizado!");
-                TelaLogin.setArray_ProfessorSemProf(novo);
+                //TelaLogin.setArray_ProfessorSemProf(novo);
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Senhas diferentes!!!");
