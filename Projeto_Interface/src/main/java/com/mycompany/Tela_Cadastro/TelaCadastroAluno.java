@@ -143,6 +143,7 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
         String Matr = TextFieldMatricula.getText();
         String EMAIL = TextFiledEmail.getText();
         String Senha = 
+                
         
         
         ObjetoAluno.setNomeString();
