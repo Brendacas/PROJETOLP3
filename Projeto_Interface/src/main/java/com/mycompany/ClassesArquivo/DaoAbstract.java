@@ -11,22 +11,23 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author estevao
  */
-public abstract class DaoAbstract implements DAO {
+public class DaoAbstract implements DAO {
 
     @Override
-    public void createArchive(String name) {
+    public void createArchive(String nomeArquivo) {
         try {
-            File arquivo = new File(name);
+            File arquivo = new File(nomeArquivo);
 
             if (arquivo.createNewFile()) {
                 System.out.println("Arquivo criado: " + arquivo.getAbsolutePath());
             } else {
-                System.out.println("O arquivo já existe.");
+                System.out.println("O arquivo ja existe.");
             }
         } catch (IOException e) {
             System.err.println("Erro ao criar o arquivo: " + e.getMessage());
@@ -34,20 +35,19 @@ public abstract class DaoAbstract implements DAO {
     }
 
     @Override
-    public void ReadArchive(String name) {
-        String csvArquivo = "aluno.csv";
+    public ArrayList<String> ReadArchive(String nomeArquivo) {
 
         BufferedReader conteudoCSV = null;
-
-        String linha = "";
+        List<String> LinhasArquivo = new ArrayList<>();
+        String linha;
 
         try {
-            conteudoCSV = new BufferedReader(new FileReader(csvArquivo));
+            conteudoCSV = new BufferedReader(new FileReader(nomeArquivo));
 
             while ((linha = conteudoCSV.readLine()) != null) {
-                String[] elemento = linha.split(";");
-                System.out.println("Matricula " + elemento[0] + " Nome " + elemento[1]); // printar as colunas
+                LinhasArquivo.add(linha);
             }
+
         } catch (FileNotFoundException e) {
             System.out.println("Arquivo não encontrado : \n" + e.getMessage());
         } catch (IOException ex) {
@@ -61,101 +61,65 @@ public abstract class DaoAbstract implements DAO {
                 }
             }
         }
+        return (ArrayList<String>) LinhasArquivo;
     }
-
     @Override
-    public void WriterArchive(String nomeArquivo, String novaLinha) {
-     
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, true))) {
+    public void WriterArchive(String nomeArquivo, ArrayList<String> atualizacao) {
 
-            bw.write(novaLinha);
-            bw.newLine();
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, false))) {
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void UpdateArchive(String nomeArquivo, String novaLinha) {
-
-        ArrayList<String> list = new ArrayList();
-
-        // Abre o arquivo e le os dados armazendando em um ArrayList
-        try (BufferedReader br = new BufferedReader(new FileReader(nomeArquivo))) {
-
-            String linha;
-            String[] item;
-
-            while ((linha = br.readLine()) != null) {
-
-                item = linha.split(";");
-
-                if (item[0].equals(id)) {
-                    list.add(id + ";" + name + ";" + email + ";" + senha + ";");
-                } else {
-                    list.add(linha);
-                }
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(DaoAbstract.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        //armazenados no ArrayList depois escreve
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo))) {
-
-            for (String a : list) {
-                bw.write(a);
+            for (String string : atualizacao) {
+                bw.write(string);
                 bw.newLine();
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @Override
+    public void UpdateArchive(String nomeArquivo, String novaLinha, String ID) {
+
+        ArrayList<String> list = ReadArchive(nomeArquivo);
+
+        int Ind = -1;
+
+        for (String string : list) {
+            Ind++;
+            String[] Compare = string.split(";");
+            if (Compare[0].equals(ID))
+                break;
+        }
+        
+        list.add(Ind, novaLinha);
+        // armazenados no ArrayList depois escreve
+        WriterArchive(nomeArquivo, list);
     }
 
     @Override
     public void DeleteArchive(String nomeArquivo, String ID) {
 
-        ArrayList<String> LinhasArquivo = new ArrayList<String>();
-
-        try (BufferedReader br = new BufferedReader(new FileReader(nomeArquivo))) {
-
-            String linha;
-            String[] compare;
-
-            while ((linha = br.readLine()) != null) {
-
-                compare = linha.split(";");
-
-                if (!compare[0].equals(ID)){
-                    LinhasArquivo.add(linha);
-                }
+        ArrayList<String> LinhasArquivo = ReadArchive(nomeArquivo);
+        int i = -1;
+        String[] compare;
+        for(String linha : LinhasArquivo){
+            i++;
+            compare = linha.split(";");
+            if (compare[0].equals(ID)) {
+                LinhasArquivo.remove(i);
+                break;
             }
-        } catch (IOException ex) {
-            Logger.getLogger(DaoAbstract.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo))) {
-
-            for (String a : LinhasArquivo) {
-                bw.write(a);
-                bw.newLine();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        WriterArchive(nomeArquivo, LinhasArquivo);
     }
 
     public static void main(String[] args) {
         DaoAbstract a = new DaoAbstract();
 
-         a.WriterArchive("aluno.csv");
-        // a.ReadArchive("aluno.csv");
-        //a.UpdateArchive("aluno.csv", "202121125", "Israel", "israel@uesc", "sdsef");
-        //a.DeleteArchive("aluno.csv", "202121125");
+        // a.WriterArchive("aluno.csv", "202121125");
+        a.ReadArchive("aluno.csv");
+        // a.UpdateArchive("aluno.csv", "202121125", "Israel", "israel@uesc", "sdsef");
+        // a.DeleteArchive("aluno.csv", "202121126");
     }
 
-  
 }
