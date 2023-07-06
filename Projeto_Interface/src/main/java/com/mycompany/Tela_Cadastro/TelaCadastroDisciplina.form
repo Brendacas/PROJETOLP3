@@ -40,37 +40,29 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="ButtonListProfessor" min="-2" pref="121" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabelCodigoDisciplina" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TextFieldCodigDisc" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <Component id="TextFieldTitulo" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="TextFieldIdProfessor" max="32767" attributes="0"/>
+                          <Component id="TextFieldNumeroCreditos" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabelCodigoDisciplina" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="TextFieldCodigDisc" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                                          <Component id="TextFieldTitulo" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabelTitulo" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabelNumeroCreditos" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelIdProfessor" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TextFieldIdProfessor" max="32767" attributes="0"/>
-                                  <Component id="TextFieldNumeroCreditos" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabelNumeroCreditos" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabelIdProfessor" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="50" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <EmptySpace pref="50" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
@@ -102,9 +94,7 @@
                   <Component id="TextFieldCodigDisc" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="TextFieldIdProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="ButtonListProfessor" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="8" max="32767" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ButtonLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ButtonSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -149,14 +139,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLimparActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="ButtonListProfessor">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Listar professores"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonListProfessorActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="TextFieldTitulo">
