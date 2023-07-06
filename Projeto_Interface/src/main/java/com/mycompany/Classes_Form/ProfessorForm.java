@@ -4,6 +4,9 @@
  */
 package com.mycompany.Classes_Form;
 
+import com.mycompany.ClassesArquivo.DAO;
+import com.mycompany.ClassesArquivo.DaoAbstract;
+
 /**
  *
  * @author castr
@@ -78,13 +81,13 @@ public class ProfessorForm extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ID))
-                        .addGap(61, 61, 61)
+                            .addComponent(ID)
+                            .addComponent(txtFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFieldCredito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(credito))
-                        .addGap(56, 56, 56)
+                            .addComponent(credito)
+                            .addComponent(txtFieldCredito, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtFieldNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nota)))
@@ -118,18 +121,9 @@ public class ProfessorForm extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
-     /*   int i = -1;
-        for (i = 0; i <= TelaLogin.ArrayDisciplina.size(); i++) {
-            if (txtCodigoDisciplina.getText().equals(TelaLogin.ArrayDisciplina.get(i).getCodigoDisciplina())) {
-                break;
-            }
-        }
-        if (i > -1) {
-            TelaLogin.ArrayDisciplina.get(i).setNotas(Float.parseFloat(txtCodigoDisciplina.getText()));
-            JOptionPane.showMessageDialog(null, "Nota adicionada");
-        }
-        JOptionPane.showMessageDialog(null, "Diciplina nao encontrada.");
-    */
+        DaoAbstract arquivo = new DaoAbstract();
+        
+        
     }//GEN-LAST:event_jButtonAdicionarActionPerformed
 
     private void jButtonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarActionPerformed

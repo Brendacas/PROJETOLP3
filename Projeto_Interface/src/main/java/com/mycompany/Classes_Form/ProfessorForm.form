@@ -36,15 +36,15 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtFieldID" min="-2" pref="83" max="-2" attributes="0"/>
                           <Component id="ID" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFieldID" min="-2" pref="118" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtFieldCredito" min="-2" max="-2" attributes="0"/>
                           <Component id="credito" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFieldCredito" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtFieldNota" min="-2" max="-2" attributes="0"/>
                           <Component id="nota" min="-2" max="-2" attributes="0"/>
