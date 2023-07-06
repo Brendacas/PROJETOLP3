@@ -132,9 +132,11 @@ public class TelaCadastroDisciplina extends javax.swing.JInternalFrame {
             novaDisciplina.setCreditos(Integer.parseInt(creditos));
             
             DaoAbstract arquivo = new DaoAbstract();
-            
             arquivo.WriterArchive("disciplina.csv", novaDisciplina.getCodigoDisciplina() + ";" + novaDisciplina.getNomeDisciplina() + ";" + 
                     Integer.toString(novaDisciplina.getCredito()) + ";" + iDProfessor);
+            
+            JOptionPane.showMessageDialog(null, "Cadastro realizado!");
+            dispose();
             
         } else {
             JOptionPane.showMessageDialog(null, "ID do Professor inválido");

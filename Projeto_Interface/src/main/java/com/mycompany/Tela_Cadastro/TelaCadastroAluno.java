@@ -172,7 +172,7 @@ public class TelaCadastroAluno extends javax.swing.JInternalFrame {
                         ";" + ObjetoAluno.getEmailString() + ";" + Senha);
                 
                 DaoAbstract  DAO= new DaoAbstract();
-                DAO.DeleteArchive("aluno.csv", AlunoString);
+                DAO.WriterArchive("aluno.csv", AlunoString);
                 
                 JOptionPane.showMessageDialog(null, "Cadastro realizado!");
                 

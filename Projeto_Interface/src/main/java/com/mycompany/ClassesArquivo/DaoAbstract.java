@@ -67,7 +67,7 @@ public class DaoAbstract implements DAO {
     @Override
     public void WriterArchive(String nomeArquivo, ArrayList<String> atualizacao) {
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, false))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, true))) {
 
             for (String string : atualizacao) {
                 bw.write(string);
@@ -81,7 +81,7 @@ public class DaoAbstract implements DAO {
     }
     @Override
     public void WriterArchive(String nomeArquivo, String novalinha){
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, false))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nomeArquivo, true))) {
                 bw.write(novalinha);
                 bw.newLine();
 
